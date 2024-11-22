@@ -23,12 +23,13 @@ namespace SimpleCalculatorApp
                                   localDate.ToString(culture), localDate.Kind);
                 Console.WriteLine("Παγκόσμια ημερομηνία και ώρα : {0}, {1:G}\n",
                                   utcDate.ToString(culture), utcDate.Kind);
-
-                Console.WriteLine("1. Πρόσθεση...");
-                Console.WriteLine("2. Αφαίρεση...");
-                Console.WriteLine("3. Πολλαπλασιασμός...");
-                Console.WriteLine("4. Διαίρεση...");
-                Console.WriteLine("5. Υπόλοιπο Διαίρεσης...");
+                Console.WriteLine("\n+-----------------------------+");
+                Console.WriteLine("|1. Πρόσθεση...               |");
+                Console.WriteLine("|2. Αφαίρεση...               |");
+                Console.WriteLine("|3. Πολλαπλασιασμός...        |");
+                Console.WriteLine("|4. Διαίρεση...               |");
+                Console.WriteLine("|5. Υπόλοιπο Διαίρεσης...     |");
+                Console.WriteLine("+-----------------------------+\n");
                 Console.Write("\nΔώσε τον αριθμό της πράξης που επιθυμείς:  ");
                 int choice;
                 choice = int.Parse(Console.ReadLine()!);
@@ -42,7 +43,8 @@ namespace SimpleCalculatorApp
                         Console.Write("Δώσε τον δεύτερο προσθετέο: ");
                         plus2 = int.Parse(Console.ReadLine()!);
                         sum = plus1 + plus2;
-                        Console.WriteLine($"Το άθροισμα του {plus1} και του {plus2} είναι {sum}.");
+                        Console.WriteLine($"Το άθροισμα του {plus1} και του {plus2} είναι {sum}.\n{plus1} + {plus2} = {sum, 10:N0}");
+                        ///  {sum, 10:N0}  to 10 "δινει" 10 ψηφια χωρο στο αποτελεσμα με δεξιά στιχοιση.
                         break;
                     case 2:
                         int minus1; int minus2; int minus;
@@ -51,7 +53,7 @@ namespace SimpleCalculatorApp
                         Console.Write("Δώσε τον αφαιρέτη (πρέπει να είναι μικρότερος απο τον μειωτέο!): ");
                         minus2 = int.Parse(Console.ReadLine()!);
                         minus = minus1 - minus2;
-                        Console.WriteLine($"Η διαφορά του {minus1} απο το {minus2} είναι {minus}.");
+                        Console.WriteLine($"Η διαφορά του {minus1} απο το {minus2} είναι {minus}.\n{minus1} - {minus2} = {minus,10:N0}");
                         break;
                     case 3:
                         int mul1; int mul2; int mul;
@@ -60,7 +62,7 @@ namespace SimpleCalculatorApp
                         Console.Write("Δώσε τον δεύτερο παράγοντα: ");
                         mul2 = int.Parse(Console.ReadLine()!);
                         mul = mul1 * mul2;
-                        Console.WriteLine($"Το γινόμενο του {mul1} επι του {mul2} είναι {mul}.");
+                        Console.WriteLine($"Το γινόμενο του {mul1} επι του {mul2} είναι {mul}.\n{mul1} * {mul2} = {mul,10:N0}");
                         break;
                     case 4:
                         int dia1; int dia2; int dia;
@@ -75,7 +77,7 @@ namespace SimpleCalculatorApp
                         }
                         else
                         {
-                            Console.WriteLine($"Το πηλίκο του {dia1} δια του {dia2} είναι {dia}.");
+                            Console.WriteLine($"Το πηλίκο του {dia1} δια του {dia2} είναι {dia}.\n{dia1} / {dia2} = {dia,10:N0}");
                         }
                         break;
                     case 5:
@@ -91,7 +93,7 @@ namespace SimpleCalculatorApp
                         else
                         {
                             dia12 = dia11 % dia22;
-                            Console.WriteLine($"Το υπόλοιπο του {dia11} δια του {dia22} είναι {dia12}.");
+                            Console.WriteLine($"Το υπόλοιπο του {dia11} δια του {dia22} είναι {dia12}.\n{dia11} % {dia22} = {dia12,10:N0}");
                         }
                         break;
                     default:
